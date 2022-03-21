@@ -1,0 +1,6 @@
+
+libgl1-mesa-glx
+tesseract-ocr -y
+libpoppler-dev
+poppler-utils
+imagemagick
