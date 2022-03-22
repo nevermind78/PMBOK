@@ -1,4 +1,4 @@
-FROM andrewosh/binder-base
+FROM jupyter/datascience-notebook
 
 USER root
 
