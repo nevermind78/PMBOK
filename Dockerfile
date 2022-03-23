@@ -5,9 +5,7 @@ ARG NB_UID="1000"
 ARG NB_GID="100"
 
 USER root
-# Copy a script that we will use to correct permissions after running certain commands
-COPY fix-permissions /usr/local/bin/fix-permissions
-RUN chmod a+rx /usr/local/bin/fix-permissions
+
 
 RUN apt-get update
 RUN apt-get install -y libgl1-mesa-glx tesseract-ocr libpoppler-dev poppler-utils imagemagick && apt-get clean
