@@ -13,3 +13,4 @@ RUN fix-permissions "${NB_PKGDIR}"
 
 WORKDIR /home/work
 COPY . .
+RUN fix-permissions "${NB_PKGDIR}"
