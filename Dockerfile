@@ -8,12 +8,6 @@ USER root
 RUN apt-get update
 RUN apt-get install -y libgl1-mesa-glx tesseract-ocr libpoppler-dev poppler-utils imagemagick && apt-get clean
 
-# (fyi) You can pass args from docker-compose.yml, just remove the "=myuser" from here
-ARG USERNAME=myuser
-
-# for whatever reason the /home/username directory is not created with useradd  for me :/
-# RUN useradd -u ${USER_UID} --gid ${USER_GID} ${USERNAME}
-RUN adduser --uid 1000 --disabled-password ${USERNAME}
 
 # Switch to our non-root user
 USER ${USERNAME}
