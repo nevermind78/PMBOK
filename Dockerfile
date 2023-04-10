@@ -10,11 +10,11 @@ RUN apt-get install -y libgl1-mesa-glx tesseract-ocr libpoppler-dev poppler-util
 
 
 # Switch to our non-root user
-#USER ${USERNAME}
+USER ${USERNAME}
 # add the default pip bin install location to the PATH
-#ENV PATH="$PATH:/home/${USERNAME}/.local/bin"
+ENV PATH="$PATH:/home/${USERNAME}/.local/bin"
 
-RUN sudo -H pip install matplotlib numpy opencv-python pandas pytesseract pdf2image tabulate Wand pdfplumber
+RUN pip install matplotlib numpy opencv-python pandas pytesseract pdf2image tabulate Wand pdfplumber
 RUN sed -i 's#<policy domain="coder" rights="none" pattern="PDF" />#<policy domain="coder" rights="read|write" pattern="PDF" />#' /etc/ImageMagick-6/policy.xml
 
 
